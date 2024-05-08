@@ -8,6 +8,9 @@ const magazineSchema=new mongoose.Schema({
 },
 url:{
     type: schemaType.TypeString
+},
+id:{
+    type: schemaType.TypeString
 }
 
 });
