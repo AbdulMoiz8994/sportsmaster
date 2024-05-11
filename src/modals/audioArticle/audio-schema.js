@@ -8,9 +8,30 @@ const audioSchema = new mongoose.Schema({
   description: {
     type: schemaType.TypeString,
   },
-  audio: {
-    type: schemaType.TypeString,
-  },
+  audio: [
+    {
+      url: {
+        type: schemaType.TypeString,
+        required: true,
+      },
+      id: {
+        type: schemaType.TypeString,
+        required: true,
+      },
+    },
+  ],
+  image: [
+    {
+      url: {
+        type: schemaType.TypeString,
+        required: true,
+      },
+      id: {
+        type: schemaType.TypeString,
+        required: true,
+      },
+    },
+  ],
   createdAt: {
     type: Date,
     default: Date.now(),

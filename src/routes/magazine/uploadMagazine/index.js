@@ -41,7 +41,7 @@ const uploadMagazine = async (req, res) => {
     // Delete file from local storage
     fs.unlinkSync(req.file.path);
 
-    return res.status(200).json({ data: magazineFile });
+    return res.status(200).json({ data: magazineFile, status: 200 });
   } catch (error) {
     console.error("Error uploading file:", error);
     return res

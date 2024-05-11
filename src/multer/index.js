@@ -12,7 +12,7 @@ const storage=multer.diskStorage({
 })
 
 const filtFilter= (req, file, cb) =>{
-    if(file.mimetype == 'image/jpeg' || file.mimetype == 'image/png' || file.mimetype == 'image/jpg' || file.mimetype === 'application/pdf'){
+    if(file.mimetype == 'image/jpeg' || file.mimetype == 'image/png' || file.mimetype == 'image/jpg' || file.mimetype === 'application/pdf' || file.mimetype.startsWith('audio/')){
       cb(null, true)
     }else{
         //   prevent to upload
