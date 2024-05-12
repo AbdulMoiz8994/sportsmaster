@@ -4,8 +4,6 @@ const fs = require("fs/promises");
 
 const uploadMusicArticle = async (req, res) => {
   try {
-    // const fileAudio = req.files["audio"];
-    // const imageAudio = req.files["image"];
     if (!req.files || !req.files.image || !req.files.audio) {
       return res
         .status(400)
@@ -41,7 +39,13 @@ const uploadMusicArticle = async (req, res) => {
     });
     await uploadAudio.save();
 
-    return res.status(200).json({ status: 200, data: uploadAudio });
+
+    await fs.unlink(req.files.audio[0].path);
+    await fs.unlink(req.files.image[0].path);
+
+   return  res.status(200).json({ status: 200, data: uploadAudio });
+    
+  
     // delete the files from the lcoal storage
   } catch (err) {
     return res.status(500).json({ message: err });

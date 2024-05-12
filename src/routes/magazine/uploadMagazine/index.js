@@ -38,8 +38,8 @@ const uploadMagazine = async (req, res) => {
     // file.images = imageUrls;
     // await file.save();
 
-    // Delete file from local storage
-    // fs.unlinkSync(req.file.path);
+    await fs.unlink( req.files["file"][0].path);
+    await fs.unlink( req.files["image"][0].path);
 
     return res.status(200).json({ data: magazineFile, status: 200 });
   } catch (error) {

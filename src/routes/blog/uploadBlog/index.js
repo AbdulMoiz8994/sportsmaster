@@ -42,6 +42,12 @@ const uploadBlog=async(req, res)=>{
 
             console.log("fianlRrsp", fianlRrsp);
             const newPackage = await blog.create(fianlRrsp);
+
+
+
+
+
+            
             return res
               .status(201)
               .json({
