@@ -1,12 +1,11 @@
 const paypal = require("paypal-rest-sdk");
 const User=require("../../modals/user");
+const { PAYMENT_MODE, CLIENT_ID, CLIENT_SECRET } = require("../../config");
 
 paypal.configure({
-  mode: "sandbox", // or 'live'
-  client_id:
-    "AVFBCKlcWRIeuuKAmeit-G4nesHt7r88Uqj8OzkUXLURRG_Z2g8GzyvYX49CQ_yu9lygmtZPwmcfIt41",
-  client_secret:
-    "EPbF4egL7jeacE-BSRFhSw3jX-EsRFOqUtQYsMaQpjG19fRvi8r07uzCha0o_P8ou1e0z6P4ZaUcghi4",
+  mode: PAYMENT_MODE, // or 'live'
+  client_id: CLIENT_ID,
+  client_secret: CLIENT_SECRET,
 });
 
 const payPalConfig = (req, res) => {
