@@ -20,7 +20,14 @@ const userSchema = new mongoose.Schema({
     },
     address: {
         type: schemaType.TypeString
-
+    },
+    verified:{
+        type: schemaType.TypeString,
+        enum: ['verified','unverified'],
+        default: 'unverified'
+    },
+    verificationDate: {
+        type: schemaType.TypeString
     },
     city: { type: schemaType.TypeString },
     state: { type: schemaType.TypeString },

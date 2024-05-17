@@ -9,12 +9,15 @@ const router = require("./src/routes/index");
 const app=express()
 
 const server=http.createServer(app);
-app.use(cors({
-    origin: true,
-    credentials: true
-}));
 
+// const corsOption = {
+//     origin: "*",
+//     methods: "GET,OPTIONS,POST,PUT,PATCH,DELETE",
+//     credentials: true,
+//   };
 app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan("short"));
 
@@ -26,10 +29,15 @@ app.get("/",async (req, res) =>{
     res.send("The App is Running");
 });
 
+
 app.use("*",(req, res) =>{
     console.log("No Route Found");
     res.send("No Route Found")
 });
+
+
+
+
 
 const PORT = process.env.ENV_PORT || 5001;
 

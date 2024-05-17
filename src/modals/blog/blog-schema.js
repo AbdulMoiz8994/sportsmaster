@@ -10,7 +10,7 @@ const BlogSchema = new mongoose.Schema({
 
     },
     description: {
-        type: schemaType.TypeArray
+        type: schemaType.TypeString
     },
     image: [
         {
@@ -19,6 +19,9 @@ const BlogSchema = new mongoose.Schema({
             },
             imgDescription: {
                 type: schemaType.TypeString // Description
+            },
+            imgTitle:{
+                type: schemaType.TypeString
             }
         }
     ],

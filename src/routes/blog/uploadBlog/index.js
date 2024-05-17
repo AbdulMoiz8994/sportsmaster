@@ -27,13 +27,15 @@ const uploadBlog=async(req, res)=>{
             };
             let uploadDesciption=req.body.description;
             console.log("uploadDesciption",uploadDesciption);
-            const descriptionsArray = req.body.imgDescription.split(',');
+            const descriptionsArray= req.body.imgDescription.split(',');
+            const descriptionsTitle= req.body.imgTitle.split(',');
 
             for (let i = 0; i < urls.length; i++) {
               // Construct image object with URL and description
               const imageObject = {
                   url: urls[i].url,
                   imgDescription: descriptionsArray[i],
+                  imgTitle: descriptionsTitle[i],
               };
               // Push the image object into the image array
               fianlRrsp.image.push(imageObject);
