@@ -124,8 +124,8 @@ const paymentSuccess = (req, res) => {
         // res.send("Payment success");
 
         try {
-            // const userId = req.userId; // Ensure you have the user ID available in the request
-            const user = await User.findById('66373b465a4336bfe28c3aeb');
+            const userId = req.userId; // Ensure you have the user ID available in the request
+            const user = await User.findById({_id: userId});
             if (user) {
               user.verified = 'verified'; // Assuming 'verified' is the enum value for verified status
               user.verificationDate = new Date();

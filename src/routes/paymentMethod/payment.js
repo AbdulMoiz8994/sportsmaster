@@ -4,8 +4,8 @@ const { payPalConfig, paymentSuccess, cancelPay } = require(".");
 const router=express.Router();
 
 
-router.post("/pay",  payPalConfig);
-router.get("/success", paymentSuccess);
+router.post("/pay",tokenVerification, payPalConfig);
+router.get("/success",tokenVerification, paymentSuccess);
 router.get('/cancel', cancelPay);
 
 
