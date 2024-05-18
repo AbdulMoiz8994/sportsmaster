@@ -29,6 +29,10 @@ const userSchema = new mongoose.Schema({
     verificationDate: {
         type: schemaType.TypeString
     },
+    visitCount: {
+        type: schemaType.TypeNumber,
+        default: 0,
+},
     city: { type: schemaType.TypeString },
     state: { type: schemaType.TypeString },
     zipCode: { type: schemaType.TypeString },

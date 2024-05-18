@@ -7,11 +7,11 @@ const BlogSchema = new mongoose.Schema({
     },
     heading: {
         type: schemaType.TypeString
-
     },
     description: {
         type: schemaType.TypeString
     },
+  
     image: [
         {
             url: {
