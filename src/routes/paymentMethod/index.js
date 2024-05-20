@@ -48,8 +48,8 @@ const create_payment_json = {
       payment_method: "paypal",
     },
     redirect_urls: {
-      return_url: "http://localhost:5001/payment/success",
-      cancel_url: "http://localhost:5001/payment/cancel",
+      return_url: "https://sportsmaster.onrender.com/payment/success",
+      cancel_url: "https://sportsmaster.onrender.com/payment/cancel",
     },
     transactions: [
       {

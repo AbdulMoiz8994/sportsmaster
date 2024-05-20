@@ -22,7 +22,7 @@ const updateBlog = async (req, res) => {
     }
 
     //   console.log("blogId",blogId);
-    // Find the blog by ID and increment the visit count
+    // Find the User by ID and increment the visit count
     const updatedUserCount = await User.findByIdAndUpdate(
       userId,
       { $inc: { visitCount: 1 } }, // Increment visitCount by 1
